@@ -1,1 +1,14 @@
 # ECGHeartBeatClassification
+A lot of research is done for heart disease classification using machine learning and deep learning algorithms for slight error and higher accuracy. In this project, we are going to use neural network for heart disease classification on large complex data. The dataset used for classification is from MIT-BIH and is large enough for neural network training.
+
+## Data Exploration
+The dataset available is a collection of two famous datasets namely MIT-BIH Arrhythmia and PTB database. After loading the data, it was visible that there was total four directories consisting of Train and Test belonging to MIT, whereas Normal and Abnormal data samples taken from PTB database. The length of data samples for Train was (87554, 188), Test (21892, 188), Normal (4046, 188),and Abnormal (10506, 188). By analyzing the data, it was clear the MIT dataset consisted of 109446 data sample and five classes Normal beat, Supra-ventricular premature beat, premature ventricular contraction, Fusion of ventricular and normal, and Paced beat. The screenshot displays the classes with their total observations and depicts classes are unbalanced.
+
+## Data Preprocessing
+In data preprocessing step, we get our data ready for model training. ECG signals consists of series of individual waves. Our data sample have signals in the form of one R peak to another in the form of 5 different classes. By analyzing, it can be estimated there is no need of scaling the data because of its large entity. 
+Furthermore, different transformations are performed for resampling the signal along time, amplifying the signal by keeping its ranges from 0 to 1 and for reducing the amplitude across vertical axis we shrink the ECG signals.
+
+## Classification Model
+For classification of heartbeat ECG signals, we proposed a model based on Convolutional neural network (CNN). It is a deep learning algorithm which constitutes of input, output, and multiple hidden layers. The main aim is behind learning data features and there are our different activation functions as well as pooling layers that trigger this process. The layers consist of various filters that can activate and with the help of repeated extraction, each layer learns and extract different rich features. The convolutional network is composed of different layers including 1D convolutional, Batch normalization, Rectified Linear Units (RELU), Pooling and SoftMax (Kanani and Padole, 2020).
+Further sequential was used in all our models as it allows implementation layer by layer. The number of filters is also increased as we move forward in the convolutional layer in our models, as first layers with lower number of filters learn simple features and for complex features more filters are required.
+ReLu which is a most used activation function is utilized in all our models and it is of advantage when the input is positive, and its calculation speed is faster than tanh and sigmoid.
